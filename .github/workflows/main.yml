@@ -16,9 +16,8 @@ jobs:
         # Build your program with the given configuration
         run: chip8sassembler tetris_reassembled.asm
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-          with:
-            name: rom
-            path: tetris_reassembled.ch8
+      - uses: actions/upload-artifact@v3
+        with:
+          name: rom
+          path: tetris_reassembled.ch8
 
