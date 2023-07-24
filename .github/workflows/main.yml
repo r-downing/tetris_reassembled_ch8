@@ -14,10 +14,10 @@ jobs:
 
       - name: Build
         # Build your program with the given configuration
-        run: chip8sassembler tetris_reassembled.asm
+        run: chip8assembler tetris_reassembled.asm
 
       - name: Gather files
-        run: mkdir -p output; cp README.md output; cp tetris_reassembled.ch8 output
+        run: mkdir -p output; cp README.md output; cp -r assets output; cp tetris_reassembled.ch8 output
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
