@@ -16,8 +16,12 @@ jobs:
         # Build your program with the given configuration
         run: chip8sassembler tetris_reassembled.asm
 
-      - uses: actions/upload-artifact@v3
+      - name: Gather files
+        run: mkdir -p output; cp README.md output; cp tetris_reassembled.ch8 output
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: rom
-          path: tetris_reassembled.ch8
+          branch: gh-pages # The branch the action should deploy to.
+          folder: output # The folder the action should deploy.
 
